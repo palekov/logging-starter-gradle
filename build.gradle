@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'maven-publish'
+
+group = 'ru.palekov'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            groupId = group
+            artifactId = 'logging-starter-gradle'
+            version = '1.0-SNAPSHOT'
+        }
+    }
+}
